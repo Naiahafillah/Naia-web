@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AbsensiKu - Fitur</title>
+  
+  <!-- Bootstrap CSS & Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    html, body {
+      height:100%;
+      margin:0;
+      font-family:'Segoe UI',sans-serif;
+      display:flex;
+      flex-direction:column;
+      background: linear-gradient(135deg,#ffd6e8,#ffeaf6,#fce1f4);
+    }
+    main{flex:1;}
+    .navbar {backdrop-filter: blur(15px); background: rgba(255,192,203,0.7);}
+    footer {background: rgba(255,192,203,0.8); backdrop-filter: blur(15px); padding:20px 0; text-align:center;}
+
+    .section-title{text-align:center; margin:50px 0 30px; color:#d63384; font-weight:700;}
+    .feature-card{
+      border-radius:20px;
+      background: linear-gradient(135deg,#ffb6c1,#ff80b5);
+      color:white;
+      padding:30px 20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .feature-card:hover{
+      transform: translateY(-10px) scale(1.03);
+      box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    }
+    .feature-icon{font-size:3rem; margin-bottom:15px;}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white" href="index.html">AbsenGoNaia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-white">
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="fitur.html">Fitur</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="harga.html">Harga</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="tentang.html">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="py-5">
+    <div class="container">
+      <h2 class="section-title">Fitur Lengkap AbsensiKu</h2>
+      <div class="row g-4 text-center">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="feature-card">
+            <i class="bi bi-clock-history feature-icon"></i>
+            <h5>Absensi Real-time</h5>
+            <p>Catat kehadiran secara instan dengan update langsung ke sistem.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card">
+            <i class="bi bi-journal-text feature-icon"></i>
+            <h5>Laporan Lengkap</h5>
+            <p>Download laporan kehadiran dengan format PDF atau Excel.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="feature-card">
+            <i class="bi bi-phone feature-icon"></i>
+            <h5>Akses Mobile</h5>
+            <p>Mudah digunakan di ponsel, tablet, maupun desktop.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="feature-card">
+            <i class="bi bi-shield-lock feature-icon"></i>
+            <h5>Keamanan Data</h5>
+            <p>Data absensi terenkripsi dan aman dari akses tidak sah.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="800">
+          <div class="feature-card">
+            <i class="bi bi-gear feature-icon"></i>
+            <h5>Konfigurasi Mudah</h5>
+            <p>Setel jadwal, kelas, dan akses user dengan mudah melalui dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="mb-0 text-white">© 2025 AbsenGoNaia | All Rights Reserved</p>
+      <div class="mt-2">
+        <a href="https://www.instagram.com/naiadhaaff_?igsh=MWtzcHN5aDcyajlvcQ%3D%3D&utm_source=qr" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.tiktok.com/@haiimnaia_?_t=ZS-8zzMzKkFc5I&_r=1" class="text-white me-3"><i class="bi bi-tiktok"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:1000,once:true});</script>
+</body>
+</html>

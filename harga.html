@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AbsensiKu - Harga</title>
+
+  <!-- Bootstrap CSS & Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    html, body {
+      height:100%;
+      margin:0;
+      font-family:'Segoe UI',sans-serif;
+      display:flex;
+      flex-direction:column;
+      background: linear-gradient(135deg,#ffd6e8,#ffeaf6,#fce1f4);
+    }
+    main{flex:1;}
+    .navbar {backdrop-filter: blur(15px); background: rgba(255,192,203,0.7);}
+    footer {background: rgba(255,192,203,0.8); backdrop-filter: blur(15px); padding:20px 0; text-align:center;}
+
+    .section-title{text-align:center; margin:50px 0 30px; color:#d63384; font-weight:700;}
+
+    .price-card {
+      border-radius:20px;
+      background: linear-gradient(135deg,#ffb6c1,#ff80b5);
+      color:white;
+      padding:30px 20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      text-align:center;
+    }
+    .price-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .btn-modern {
+      background: linear-gradient(45deg, #ff7eb9, #ff4da6);
+      border-radius:50px;
+      padding:12px 30px;
+      font-weight:bold;
+      color:white;
+      transition: all 0.3s ease;
+      border:none;
+    }
+    .btn-modern:hover {
+      background: linear-gradient(45deg, #ff4da6, #ff1a75);
+      transform: scale(1.05);
+      box-shadow:0 8px 25px rgba(255,77,166,0.4);
+    }
+
+    .form-control, .form-select {
+      border-radius:10px;
+      padding:12px;
+    }
+
+    #alertMessage {
+      display:none;
+      font-weight:bold;
+      margin-top:10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="index.html">AbsenGoNaia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto text-white">
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="fitur.html">Fitur</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="harga.html">Harga</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="tentang.html">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main -->
+<main class="py-5">
+  <div class="container">
+    <h2 class="section-title">Paket Harga</h2>
+    <div class="row g-4 justify-content-center">
+      <!-- Paket 1 -->
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="price-card">
+          <h4>Paket Basic</h4>
+          <p>Rp50.000 / bulan</p>
+          <p>Fitur standar absensi</p>
+          <button class="btn-modern" data-bs-toggle="modal" data-bs-target="#buyModal" data-paket="Basic" data-harga="Rp50.000">Beli Paket</button>
+        </div>
+      </div>
+      <!-- Paket 2 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="price-card">
+          <h4>Paket Pro</h4>
+          <p>Rp100.000 / bulan</p>
+          <p>Fitur lengkap + laporan real-time</p>
+          <button class="btn-modern" data-bs-toggle="modal" data-bs-target="#buyModal" data-paket="Pro" data-harga="Rp100.000">Beli Paket</button>
+        </div>
+      </div>
+      <!-- Paket 3 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="price-card">
+          <h4>Paket Premium</h4>
+          <p>Rp200.000 / bulan</p>
+          <p>Semua fitur + prioritas support</p>
+          <button class="btn-modern" data-bs-toggle="modal" data-bs-target="#buyModal" data-paket="Premium" data-harga="Rp200.000">Beli Paket</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Modal Beli Paket (Compact Vertical) -->
+<div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:20px; overflow:hidden;">
+      <div class="modal-header" style="background: linear-gradient(135deg,#ff7eb9,#ff4da6); color:white; border-bottom:none;">
+        <h5 class="modal-title" id="buyModalLabel">Form Pembelian</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" style="background: #fff0f6; padding:15px 20px;">
+        <form id="buyForm" onsubmit="return submitBuy()">
+          <div class="mb-2">
+            <label class="form-label fw-semibold" style="font-size:0.9rem;">Nama</label>
+            <input type="text" class="form-control form-control-sm" id="buyName" placeholder="Masukkan nama">
+          </div>
+          <div class="mb-2">
+            <label class="form-label fw-semibold" style="font-size:0.9rem;">Email</label>
+            <input type="email" class="form-control form-control-sm" id="buyEmail" placeholder="Masukkan email">
+          </div>
+          <div class="mb-2">
+            <label class="form-label fw-semibold" style="font-size:0.9rem;">Paket</label>
+            <input type="text" class="form-control form-control-sm" id="buyPaket" readonly style="background:#ffd6e8;">
+          </div>
+          <div class="mb-2">
+            <label class="form-label fw-semibold" style="font-size:0.9rem;">Harga</label>
+            <input type="text" class="form-control form-control-sm" id="buyHarga" readonly style="background:#ffd6e8;">
+          </div>
+          <div class="mb-2">
+            <label class="form-label fw-semibold" style="font-size:0.9rem;">Metode Pembayaran</label>
+            <select class="form-select form-select-sm" id="buyPayment">
+              <option value="">Pilih metode</option>
+              <option value="Transfer Bank">Transfer Bank</option>
+              <option value="OVO">OVO</option>
+              <option value="GoPay">GoPay</option>
+              <option value="Dana">Dana</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-modern w-100 mt-2" style="padding:8px 0; font-size:0.9rem;">Beli Sekarang</button>
+          <p id="alertMessage" class="text-center mt-2" style="font-size:0.85rem;"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p class="mb-0 text-white">© 2025 AbsenGoNaia | All Rights Reserved</p>
+    <div class="mt-2">
+      <a href="https://www.instagram.com/naiadhaaff_?igsh=MWtzcHN5aDcyajlvcQ%3D%3D&utm_source=qr" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.tiktok.com/@haiimnaia_?_t=ZS-8zzMzKkFc5I&_r=1" class="text-white me-3"><i class="bi bi-tiktok"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({duration:1000,once:true});
+
+  // Auto isi paket & harga saat modal dibuka
+  const buyModal = document.getElementById('buyModal');
+  buyModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    const paket = button.getAttribute('data-paket');
+    const harga = button.getAttribute('data-harga');
+    document.getElementById('buyPaket').value = paket;
+    document.getElementById('buyHarga').value = harga;
+    document.getElementById('alertMessage').style.display='none';
+  });
+
+  // Validasi form pembelian
+  function submitBuy() {
+    const name = document.getElementById('buyName').value.trim();
+    const email = document.getElementById('buyEmail').value.trim();
+    const paket = document.getElementById('buyPaket').value.trim();
+    const harga = document.getElementById('buyHarga').value.trim();
+    const payment = document.getElementById('buyPayment').value;
+    const alertBox = document.getElementById('alertMessage');
+
+    if(name === "" || email === "" || paket === "" || harga === "" || payment === "") {
+      alertBox.style.display = "block";
+      alertBox.style.color = "#ffeb3b";
+      alertBox.textContent = "Semua field harus diisi!";
+      return false;
+    } else {
+      alertBox.style.display = "block";
+      alertBox.style.color = "#00ff7f";
+      alertBox.textContent = "Terima kasih! Paket berhasil dibeli.";
+      document.getElementById('buyForm').reset();
+      setTimeout(()=>{alertBox.style.display='none';},2000);
+      return false;
+    }
+  }
+</script>
+</body>
+</html>
